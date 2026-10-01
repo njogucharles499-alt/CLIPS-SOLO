@@ -76,7 +76,7 @@ V2 must be a "Yes" pair with V1 in the compatibility table in `style-selection-r
 
 **Always re-cut from source.** Re-editing V1 into V2 inherits V1's in/out points and pacing decisions and produces a version that is the same clip with different music. Each version starts from the raw segment with fresh cut decisions.
 
-Each version is scored independently against the 80-point framework using **its own style's critical sections**.
+Each version is scored independently against the 18-principle framework using **its own style's critical principles**.
 
 ---
 
@@ -156,7 +156,7 @@ Each version's metadata extends the standard fields with:
   "version_role": "Primary | Contrast | Wildcard",
   "editing_style": "Cinematic",
   "hook_type": "High-Stakes Moment",
-  "framework_score": "68/75 (91%)",
+  "framework_score": "17/17 (0 miss)",
   "distinct_from_v1": ["D1", "D2", "D3", "D5", "D6"],
   "recommended_platforms": ["YouTube", "Instagram"]
 }

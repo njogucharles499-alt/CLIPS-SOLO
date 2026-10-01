@@ -28,7 +28,7 @@ Long-form video
  6. Edit each version in its style  ─►  vault/editing-styles.md
       │
       ▼
- 7. Craft score (80 points)  ────────►  vault/editing-framework.md
+ 7. Craft check (18 principles)  ───►  vault/editing-framework.md
       │
       ▼
  8. Technical QC (20 rules)  ────────►  vault/editing-rules.md
@@ -48,7 +48,7 @@ CLIPS-SOLO/
 │   ├── style-selection-rules.md     # Decision tree: content signals → style
 │   ├── editing-styles.md            # 5 editing styles and their rules
 │   ├── multi-version-strategy.md    # Producing 2–3 versions per source segment
-│   ├── editing-framework.md         # 80-point craft framework
+│   ├── editing-framework.md         # 18 core editing principles
 │   ├── editing-rules.md             # 20 technical QC rules
 │   └── lovable-requirements.md      # 7 Lovable campaign requirements
 └── README.md
@@ -64,7 +64,7 @@ When working in this repo, Claude should:
 4. **Auto-select the style** for every clip using `vault/style-selection-rules.md` — never pick a style by feel.
 5. **Plan versions** with `vault/multi-version-strategy.md` based on the selection confidence and clip tier.
 6. **Edit each version** to its style's rules in `vault/editing-styles.md`.
-7. **Score each version** against the 80-point framework in `vault/editing-framework.md`: ≥ 80% of applicable points, ≥ 4/5 in every critical section for its style, and no misses on the non-negotiable points.
+7. **Score each version** against the 18 principles in `vault/editing-framework.md`: ≤ 2 misses, all non-negotiables (Purpose, Hook, Clarity, Payoff) pass, and every critical principle for its style passes.
 8. **QC each version** against the 20 rules in `vault/editing-rules.md` (≥ 16/20, mandatory rules 3, 5, 7, 20).
 9. **Validate the package** against all 7 requirements in `vault/lovable-requirements.md` before export.
 
@@ -127,7 +127,7 @@ Run for every candidate clip after hook and arc assignment.
 - [ ] Content signals extracted and style auto-selected (primary, secondary, confidence)
 - [ ] Version count and roles planned; distinctness check passed
 - [ ] Each version edited to its style's rules
-- [ ] Each version scored on the 80-point framework (≥ 80%, critical sections ≥ 4/5)
+- [ ] Each version checked against the 18 principles (≤ 2 misses, non-negotiables and style-critical principles pass)
 - [ ] Each version passed technical QC (≥ 16/20, mandatory rules met)
 - [ ] Lovable requirements validated (7/7)
 - [ ] Exports generated in all target formats, packaged per version

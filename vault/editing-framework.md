@@ -1,214 +1,308 @@
-# 80-Point Elite Editing Framework
+# Elite Editing Framework — 18 Core Principles
 
-The framework is the **creative craft score** for a clip. It answers "is this edit great?" — whereas `editing-rules.md` is the **technical QC gate** that answers "is this edit clean?". Every clip goes through both:
+The craft check Claude applies to every clip version. `editing-rules.md` checks that an edit is **clean**; this framework checks that it is **good**.
 
 ```
-Edit  ──►  80-point framework (craft)  ──►  20 editing rules (QC)  ──►  Lovable requirements (delivery)
+Edit  ──►  18 principles (craft)  ──►  20 editing rules (QC)  ──►  Lovable requirements (delivery)
 ```
 
-The 80 points are grouped into 16 sections of 5. Each point is scored **1 (hit)** or **0 (miss)**. Points that genuinely cannot apply to a clip (e.g. comedic timing in a grief story) are marked **N/A** and removed from the denominator.
+## How to Score
+
+Mark each principle **Pass**, **Miss**, or **N/A** (only when it truly can't apply, e.g. Reactions in a solo monologue with no reaction moments).
+
+A version ships when **all three** hold:
+
+1. **No more than 2 Misses** across the applicable principles.
+2. **Non-negotiables all pass:** 1 Purpose · 4 Hook · 15 Clarity · 16 Payoff.
+3. **The style's critical principles all pass** (table below).
+
+Otherwise: fix the Missed principles and re-score. If it still fails after one revision, re-cut from source or drop the clip.
+
+| Style         | Critical principles                                   |
+|---------------|-------------------------------------------------------|
+| Fast/Energy   | 4 Hook · 6 Retention · 7 Pacing · 18 Micro-Editing    |
+| Cinematic     | 2 Story · 10 Emotion · 11 Tension & Release · 13 Silence |
+| Comedy        | 8 Rhythm · 12 Reactions · 13 Silence · 16 Payoff      |
+| Educational   | 3 Information Hierarchy · 7 Pacing · 15 Clarity       |
+| Inspirational | 2 Story · 10 Emotion · 11 Tension & Release · 16 Payoff |
 
 ---
 
-## Scoring Thresholds
+## 1. Purpose
 
-| Score (% of applicable points) | Grade        | Action                                  |
-|--------------------------------|--------------|-----------------------------------------|
-| ≥ 90%                          | Elite        | Ship. Candidate for paid amplification. |
-| 80–89%                         | Strong       | Ship.                                   |
-| 70–79%                         | Workable     | One revision pass on weakest section.   |
-| < 70%                          | Reject       | Re-cut from source or drop the clip.    |
+**What:** The clip does one job — inform, move, amuse, provoke, or inspire — for one specific viewer.
+**Why:** A clip trying to do two jobs does neither, and the viewer can't tell why they should keep watching.
 
-**Critical sections:** each editing style (see `editing-styles.md`) names 3–4 critical sections. A clip must score **≥ 4/5 in every critical section** for its style regardless of total score.
+**Apply:**
+1. Write "This clip exists to ___" in under 10 words before cutting.
+2. For every segment, ask "does this serve that job?" — cut it if not, however good it is.
+3. Check the purpose against the Lovable campaign brief.
 
-**Non-negotiable points:** P1, P6, P21, P36, P76. A miss on any of these is an automatic reject.
-
----
-
-## A. Purpose (P1–P5)
-
-| #  | Principle | Check |
-|----|-----------|-------|
-| P1 | **One job.** The clip has a single, nameable purpose: inform, move, amuse, provoke, or inspire. | Can you finish "This clip exists to ___" in under 10 words? |
-| P2 | **Known viewer.** The edit is built for a specific viewer, not "everyone". | Can you describe who stops scrolling for this? |
-| P3 | **Desired after-state.** You know what the viewer should feel, think, or do when it ends. | Is the final beat engineered toward that state? |
-| P4 | **Every second serves the job.** Material that doesn't advance the purpose is cut, however good. | Remove any segment — does the clip get worse? If not, it stays removed. |
-| P5 | **Campaign fit.** The purpose aligns with the Lovable campaign brief. | Does it serve the brief's stated objective? |
-
-## B. Story (P6–P10)
-
-| #   | Principle | Check |
-|-----|-----------|-------|
-| P6  | **Complete arc.** The clip has a beginning, middle, and end mapped to an arc in `arcs.md`. | Arc assigned and every phase present? |
-| P7  | **Protagonist clarity.** It is obvious whose story or point of view this is within 5 seconds. | Would a cold viewer know who to follow? |
-| P8  | **Change occurs.** Something is different at the end — a belief, a situation, a feeling. | Name the before and after. |
-| P9  | **Causality, not sequence.** Beats connect with "therefore / but", not "and then". | Read the beats aloud — do they cause each other? |
-| P10 | **Standalone.** The clip makes full sense with zero context from the source video. | Show it to someone who hasn't seen the source. |
-
-## C. Information Hierarchy (P11–P15)
-
-| #   | Principle | Check |
-|-----|-----------|-------|
-| P11 | **Most important idea first or last.** The key line sits at the open or the close — never buried in the middle. | Where is the single most important sentence? |
-| P12 | **Context only on demand.** Background is introduced at the moment the viewer needs it, not before. | Is any setup front-loaded that could come later? |
-| P13 | **One new idea at a time.** No two new concepts are introduced in the same 5-second window. | Count new concepts per 5 s. |
-| P14 | **Concrete before abstract.** Examples, numbers, and names come before or with the principle. | Does every abstract claim have a concrete anchor? |
-| P15 | **Visual emphasis matches verbal emphasis.** The edit (punch-in, caption weight, B-roll) highlights the same words the speaker stresses. | Do emphasised captions line up with vocal stress? |
-
-## D. Curiosity (P16–P20)
-
-| #   | Principle | Check |
-|-----|-----------|-------|
-| P16 | **Hook opens a gap.** The first 3 seconds create a question the viewer needs answered (see `hooks.md`). | What question does the hook plant? |
-| P17 | **Gap is held, not closed early.** The answer is withheld long enough to create pull, short enough to avoid frustration (target: answer by 60–75% of runtime). | Timestamp of the payoff ÷ runtime. |
-| P18 | **Micro-loops.** New small questions open as earlier ones close, so attention never fully resets. | Map open loops across the timeline — is there always at least one open? |
-| P19 | **Specificity creates curiosity.** Specific details ("$4,212", "3 a.m.", "the second email") are kept; vague phrasing is cut. | Are the most specific details preserved? |
-| P20 | **No premature reveal.** Titles, captions, and thumbnails don't spoil the payoff. | Does any text give away the ending? |
-
-## E. Retention (P21–P25)
-
-| #   | Principle | Check |
-|-----|-----------|-------|
-| P21 | **No dead first second.** Frame 1 contains motion, speech, or a striking image. | Scrub frame 1. |
-| P22 | **Re-hook every 7–10 seconds.** A visual change, new information, tonal shift, or question re-earns attention at regular intervals. | Mark re-hooks on the timeline; any gap > 10 s? |
-| P23 | **Mid-clip sag fixed.** The 40–60% mark (where retention typically dips) has a deliberate lift: reveal, escalation, or pattern break. | What happens at the midpoint? |
-| P24 | **Loop-friendly ending (short-form).** For TikTok/Reels/Shorts, the last frame flows naturally back into the first where possible. | Watch it on loop — is the seam smooth? |
-| P25 | **Shortest version that works.** The clip has been tested at a shorter length and the extra time proved its worth. | Could 10–20% be cut without loss? |
-
-## F. Pacing (P26–P30)
-
-| #   | Principle | Check |
-|-----|-----------|-------|
-| P26 | **Pace matches content.** Excitement is fast, gravity is slow, explanation is medium (see `editing-styles.md`). | Does the pace fit the assigned style? |
-| P27 | **Pace varies.** The clip changes speed at least once — monotone pacing, fast or slow, flattens attention. | Plot shot lengths — is there variation? |
-| P28 | **Accelerate into peaks.** Shot length shortens as the clip approaches its climax. | Do cuts tighten before the peak? |
-| P29 | **Decelerate for weight.** The most meaningful line gets room — a held shot or a beat of space after it. | Is the key line given air? |
-| P30 | **No drag.** No section feels long relative to its information or emotional value. | Watch at 1× without scrubbing — any urge to skip? |
-
-## G. Rhythm (P31–P35)
-
-| #   | Principle | Check |
-|-----|-----------|-------|
-| P31 | **Cuts on the beat or on the breath.** Cuts land on musical beats, speech stresses, or natural pauses — never arbitrarily. | Are cut points motivated by sound? |
-| P32 | **Pattern then break.** Establish a rhythm, then break it once at the most important moment. | Where is the rhythm break, and is it on the key beat? |
-| P33 | **Speech cadence preserved.** Tightening dialogue never makes the speaker sound robotic or breathless. | Does the speaker still sound human? |
-| P34 | **Music phrasing respected.** Music edits land on phrase boundaries (4 or 8 bars), not mid-phrase. | Any audible music jumps? |
-| P35 | **Visual rhythm matches audio rhythm.** Fast audio sections have fast visuals; slow sections have slow visuals. | Mute it — does the visual rhythm still tell the energy story? |
-
-## H. Cutting (P36–P40)
-
-| #   | Principle | Check |
-|-----|-----------|-------|
-| P36 | **Every cut has a reason.** Each cut does one of: remove waste, add emphasis, change perspective, control time. | Can you justify every cut? |
-| P37 | **Cut on action or thought.** Visual cuts happen on movement; dialogue cuts happen at the end of a thought. | Do cuts hide inside motion or completed thoughts? |
-| P38 | **J- and L-cuts for flow.** Audio leads or trails picture across conversational edits to smooth transitions. | Are hard A/V cuts used only where abruptness is intended? |
-| P39 | **Punch-ins are earned.** Zooms/punch-ins mark emphasis, not decoration — max one per key point. | Does each punch-in coincide with a stressed word? |
-| P40 | **Invisible by default, visible by intent.** Cuts disappear unless a visible cut is a deliberate stylistic choice. | Does any cut feel accidental? |
-
-## I. Emotion (P41–P45)
-
-| #   | Principle | Check |
-|-----|-----------|-------|
-| P41 | **Target emotion named.** The edit is built around one primary emotion (awe, laughter, anger, hope, curiosity, empathy). | Name it in one word. |
-| P42 | **Faces carry feeling.** The most emotional moments are shown on the speaker's face, not covered with B-roll. | Is B-roll hiding a reaction? |
-| P43 | **Authentic moments kept.** Pauses, voice cracks, laughs, and imperfections that carry genuine emotion are preserved, not tightened out. | Did cleanup remove anything human? |
-| P44 | **Emotion escalates.** Emotional intensity at the end is higher than at the start. | Compare the first and last 5 seconds. |
-| P45 | **No manufactured emotion.** Music, slow-mo, or effects don't claim a feeling the content hasn't earned. | Would the moment land without the music? |
-
-## J. Tension (P46–P50)
-
-| #   | Principle | Check |
-|-----|-----------|-------|
-| P46 | **Stakes established early.** What could be won or lost is clear within the first third. | State the stakes in one sentence. |
-| P47 | **Tension escalates in steps.** Each beat raises the stakes or narrows the options. | Is each beat higher than the last? |
-| P48 | **Delay is deliberate.** The edit holds back resolution with purpose — a pause, a cutaway, a held look. | Where is resolution delayed, and does it build pressure? |
-| P49 | **Silence used as a tool.** At least one moment of reduced sound heightens tension (where the style permits). | Is there a strategic drop in audio? |
-| P50 | **Tension is never unresolved by accident.** Any open tension at the end is a deliberate cliffhanger with a queued follow-up. | If tension remains, is Part 2 ready? |
-
-## K. Release (P51–P55)
-
-| #   | Principle | Check |
-|-----|-----------|-------|
-| P51 | **Release matches build.** The size of the payoff matches the size of the build-up. | Does the payoff feel worth the wait? |
-| P52 | **Release lands cleanly.** The payoff line is uncluttered — no competing music swell, text, or B-roll. | Is the payoff moment visually and sonically clear? |
-| P53 | **Breath after release.** A short beat follows the payoff so it can land before the clip moves on or ends. | Is there ≥ 0.5 s after the payoff? |
-| P54 | **Release changes the energy.** Sound, pace, or framing shifts at the release to mark it. | What changes at the payoff moment? |
-| P55 | **No double release.** The clip pays off once — secondary resolutions after the main one are cut. | Is there anything after the real ending? |
-
-## L. Comedic Timing (P56–P60)
-
-*Mark N/A for clips with no comedic intent.*
-
-| #   | Principle | Check |
-|-----|-----------|-------|
-| P56 | **Setup is lean.** The setup contains only what the punchline needs. | Can any setup words go? |
-| P57 | **Pause before the punch.** A micro-beat (0.2–0.5 s) precedes the punchline to build anticipation. | Is the pre-punch beat present? |
-| P58 | **Pause after the punch.** The clip holds 0.5–1.5 s after the punchline for the laugh to land. | Is there room to laugh? |
-| P59 | **Reaction is the second punch.** A reaction shot, look, or silence after the joke extends it. | Is the reaction used? |
-| P60 | **Rule of three / callback.** Where possible, the pattern-pattern-break structure or a callback to an earlier moment is used. | Is there a structural joke device? |
-
-## M. Sound Design (P61–P65)
-
-| #   | Principle | Check |
-|-----|-----------|-------|
-| P61 | **Dialogue is king.** Speech is the clearest element in the mix at all times. | Any word hard to understand? |
-| P62 | **Music chosen for emotion, not taste.** The track reinforces the target emotion (P41). | Does the music match the named emotion? |
-| P63 | **Sound effects motivated.** Whooshes, hits, and risers mark real moments, never fill space. | Can you justify each SFX? |
-| P64 | **Room tone continuity.** Background ambience is consistent across cuts — no audible jumps in noise floor. | Listen on headphones for ambience jumps. |
-| P65 | **Final mix at platform loudness.** Integrated loudness around −14 LUFS for social; true peak ≤ −1 dBTP. | Meter the export. |
-
-## N. Visual Composition (P66–P70)
-
-| #   | Principle | Check |
-|-----|-----------|-------|
-| P66 | **Reframed for the platform.** Vertical crops keep the subject centred and expressive, not just centre-cropped from 16:9. | Is the subject well framed in every aspect ratio? |
-| P67 | **Safe zones respected.** Faces and captions avoid platform UI zones (top 10%, bottom 20%, right 15% on vertical). | Overlay the platform UI template. |
-| P68 | **B-roll illustrates, never decorates.** Every insert directly shows what is being said. | Does each B-roll shot match the words? |
-| P69 | **Visual variety without chaos.** Shot sizes vary (wide / medium / close) but the eye always knows where to look. | Is there a clear focal point in every frame? |
-| P70 | **Grade supports mood.** Colour grade is consistent and matches the emotional tone of the style. | Does the look match the feeling? |
-
-## O. Text & Captions (P71–P75)
-
-| #   | Principle | Check |
-|-----|-----------|-------|
-| P71 | **Captions readable in one glance.** 1–2 lines, ≤ 42 characters per line, high contrast. | Can you read each block at mobile size without pausing? |
-| P72 | **Keyword emphasis.** The 1–2 most important words per block are highlighted (colour, weight, or scale). | Are emphasis words the right ones? |
-| P73 | **Caption timing synced to speech.** Captions appear with the word, not before or after. | Any visible lag or lead? |
-| P74 | **On-screen text adds, never repeats.** Titles and callouts add context the audio doesn't give. | Does any text just duplicate the caption? |
-| P75 | **Text style fits the style.** Caption font, motion, and colour match the editing style and brand. | Does the type feel like the clip? |
-
-## P. Ending & Payoff (P76–P80)
-
-| #   | Principle | Check |
-|-----|-----------|-------|
-| P76 | **Hook promise delivered.** Whatever the first 3 seconds promised is paid off before the end. | State the promise and where it's delivered. |
-| P77 | **Ends on the strongest line.** The final spoken line is one of the 2–3 best lines in the clip. | Rank the lines — is the last one top 3? |
-| P78 | **Clean exit.** The clip ends on a clean frame and a clean audio tail — no clipped words or abrupt music cut. | Watch the last 2 seconds three times. |
-| P79 | **CTA fits the emotion.** Any call to action matches the viewer's after-state (see `lovable-requirements.md` Req. 4). | Would the viewer actually want to do the CTA now? |
-| P80 | **Rewatch or share trigger.** The ending gives a reason to rewatch (a detail, a loop) or share (an emotion, a quotable line). | Why would someone send this to a friend? |
+**Avoid:** Keeping a great line that belongs to a different clip. Cutting for "everyone" instead of a named viewer.
 
 ---
 
-## Scoring Sheet
+## 2. Story
 
-| Section               | Points   | Score | Critical for style? |
-|-----------------------|----------|-------|---------------------|
-| A. Purpose            | P1–P5    | /5    |                     |
-| B. Story              | P6–P10   | /5    |                     |
-| C. Information Hierarchy | P11–P15 | /5  |                     |
-| D. Curiosity          | P16–P20  | /5    |                     |
-| E. Retention          | P21–P25  | /5    |                     |
-| F. Pacing             | P26–P30  | /5    |                     |
-| G. Rhythm             | P31–P35  | /5    |                     |
-| H. Cutting            | P36–P40  | /5    |                     |
-| I. Emotion            | P41–P45  | /5    |                     |
-| J. Tension            | P46–P50  | /5    |                     |
-| K. Release            | P51–P55  | /5    |                     |
-| L. Comedic Timing     | P56–P60  | /5    |                     |
-| M. Sound Design       | P61–P65  | /5    |                     |
-| N. Visual Composition | P66–P70  | /5    |                     |
-| O. Text & Captions    | P71–P75  | /5    |                     |
-| P. Ending & Payoff    | P76–P80  | /5    |                     |
-| **Total**             |          | **/applicable** | **%** |
+**What:** The clip has a beginning, middle, and end that follow one arc from `arcs.md`, and something changes by the end.
+**Why:** Viewers remember and share stories; they scroll past fragments.
 
-Record the result in the clip's metadata as `"framework_score": "NN/MM (PP%)"`.
+**Apply:**
+1. Assign the arc and mark where each phase starts on the transcript.
+2. Name the before-state and after-state in one line each.
+3. Connect beats with "but" / "therefore", not "and then" — reorder or cut beats that don't cause the next one.
+
+**Avoid:** A clip that needs context from the source video to make sense. Ending before the change happens.
+
+---
+
+## 3. Information Hierarchy
+
+**What:** The most important idea sits at the start or end, context arrives only when needed, and one new idea is introduced at a time.
+**Why:** Viewers retain the first and last thing they hear; overload in the middle makes them leave.
+
+**Apply:**
+1. Find the single most important sentence and place the cut so it lands in the first 5 s or the final beat.
+2. Move or drop any setup the viewer doesn't need yet.
+3. Space new concepts at least 5 s apart; put the concrete example before the abstract point.
+
+**Avoid:** Burying the key line in the middle. Front-loading background "so you understand".
+
+---
+
+## 4. Hook
+
+**What:** The first 3 seconds match one of the 5 hook types in `hooks.md` and start at full energy.
+**Why:** Most viewers decide to stay or scroll within 3 seconds; nothing after that matters if the hook fails.
+
+**Apply:**
+1. Start on the first syllable of the hook line — no breath, greeting, or "so".
+2. Make frame 1 visually alive: face mid-expression, motion, or a striking image.
+3. Add on-screen text only if it sharpens the hook without spoiling the payoff.
+
+**Avoid:** Warming up before the hook. A hook that promises something the clip never delivers.
+
+---
+
+## 5. Curiosity Gap
+
+**What:** The clip opens a question the viewer needs answered and holds it open until the right moment.
+**Why:** An unanswered question is the strongest reason to keep watching.
+
+**Apply:**
+1. Name the question the hook plants.
+2. Place the answer at 60–75% of the runtime — late enough to pull, early enough not to frustrate.
+3. Open a smaller new question as each one closes so there's always one open.
+
+**Avoid:** Answering in the first 5 seconds. Spoiling the answer in captions, title text, or the thumbnail.
+
+---
+
+## 6. Retention
+
+**What:** Attention is re-earned at regular intervals so the viewer never has a natural exit point.
+**Why:** Platforms rank by watch time; every dip is lost reach.
+
+**Apply:**
+1. Mark a re-hook (new info, visual change, question, tonal shift) at least every 7–10 s (5–7 s for Fast/Energy).
+2. Put a deliberate lift — reveal, escalation, or pattern break — at the 40–60% mark where retention sags.
+3. Cut the version 10–20% shorter and keep the shorter one unless the extra time clearly earns its place.
+
+**Avoid:** A flat middle third. Padding to hit a target length.
+
+---
+
+## 7. Pacing
+
+**What:** The speed of the edit matches the content and the style, and it varies.
+**Why:** Wrong-speed pacing makes excitement feel dull or gravity feel rushed; constant pacing feels monotonous at any speed.
+
+**Apply:**
+1. Set the average shot length from the style's spec in `editing-styles.md`.
+2. Speed up (shorter shots) into the peak; slow down (held shot) on the most meaningful line.
+3. Watch at 1× without scrubbing — trim wherever you feel the urge to skip.
+
+**Avoid:** Cutting everything at the same speed. Rushing the line that matters most.
+
+---
+
+## 8. Rhythm
+
+**What:** Cuts land on musical beats, speech stresses, or natural pauses, forming a pattern that breaks once at the key moment.
+**Why:** Motivated cuts feel invisible and satisfying; arbitrary cuts feel jarring.
+
+**Apply:**
+1. Place each cut on a beat, a stressed word, or the end of a thought.
+2. Establish a cutting pattern, then break it once — on the most important line.
+3. Edit music on phrase boundaries (4 or 8 bars), never mid-phrase.
+
+**Avoid:** Tightening dialogue until the speaker sounds robotic. Music jumps mid-phrase.
+
+---
+
+## 9. Cutting
+
+**What:** Every cut has a reason — remove waste, add emphasis, change perspective, or control time.
+**Why:** Unjustified cuts draw attention to the edit instead of the content.
+
+**Apply:**
+1. Cut on action (movement) for picture and on completed thoughts for dialogue.
+2. Use J-cuts and L-cuts (audio leading or trailing picture) to smooth conversational edits.
+3. Use punch-ins only on stressed words — one per key point.
+
+**Avoid:** Punch-ins as decoration. Hard A/V cuts where you wanted flow.
+
+---
+
+## 10. Emotion
+
+**What:** The edit is built around one named target emotion that grows stronger by the end.
+**Why:** Emotion drives shares and memory; information alone rarely does.
+
+**Apply:**
+1. Name the target emotion in one word (awe, laughter, anger, hope, curiosity, empathy).
+2. Keep the face on screen during the most emotional moments — don't cover them with B-roll.
+3. Keep genuine pauses, voice cracks, and laughs; compare the first and last 5 s to confirm intensity rises.
+
+**Avoid:** Using music or slow-mo to claim a feeling the content hasn't earned. Cleaning out the human imperfections.
+
+---
+
+## 11. Tension & Release
+
+**What:** Stakes are set early, build in steps, and pay off with a release sized to match the build.
+**Why:** Tension holds attention; release delivers the satisfaction that makes the clip worth finishing.
+
+**Apply:**
+1. Make the stakes clear in the first third.
+2. Order beats so each raises the stakes or narrows the options.
+3. Mark the release with a change in sound, pace, or framing, then give it a beat (≥ 0.5 s) to land.
+
+**Avoid:** Releasing too early. Leaving tension unresolved by accident (only cliffhang if Part 2 is queued).
+
+---
+
+## 12. Reactions
+
+**What:** Listener faces, audience responses, and the speaker's own reactions are used as beats in their own right.
+**Why:** Viewers take their emotional cue from other people's reactions — a reaction confirms the moment landed.
+
+**Apply:**
+1. Scan the source for reaction shots (laughs, shock, nods, silence) around every key line.
+2. Cut to the reaction right after a punchline, reveal, or confession — hold it long enough to read.
+3. In solo footage, use the speaker's own reaction (a smile, a pause, a look away) the same way.
+
+**Avoid:** Cutting away from the speaker before their reaction lands. Using unrelated reactions from elsewhere in the source to fake one.
+
+---
+
+## 13. Silence
+
+**What:** Deliberate pauses and drops in sound are used to add weight, build tension, or let a laugh land.
+**Why:** Contrast makes the next sound hit harder; constant sound flattens everything.
+
+**Apply:**
+1. Drop music out for the single most important line or right before the peak.
+2. Hold 0.2–0.5 s before a punchline and 0.5–1.5 s after it.
+3. Keep dramatic pauses ≤ 2.5 s; fill anything longer with room tone (Rule 4).
+
+**Avoid:** Filling every gap with music or SFX. Dead silence with no room tone, which sounds like an error.
+
+---
+
+## 14. Audio Balance
+
+**What:** Dialogue is always the clearest element, with music and effects sitting underneath it.
+**Why:** Viewers forgive rough visuals but leave immediately when they can't understand the words.
+
+**Apply:**
+1. Duck music at least 12 dB under voice (Rule 11).
+2. Keep room tone consistent across cuts — check on headphones for noise-floor jumps.
+3. Master to about −14 LUFS integrated, true peak ≤ −1 dBTP.
+
+**Avoid:** Music fighting the voice in the loud parts. SFX that aren't tied to a real moment.
+
+---
+
+## 15. Clarity
+
+**What:** A cold viewer understands what is being said and what to look at, at every moment, on a phone with sound off.
+**Why:** Most short-form is watched muted on a small screen; confusion is an instant scroll.
+
+**Apply:**
+1. Burned-in captions on every spoken frame, 1–2 lines, ≤ 42 characters per line, synced to the word.
+2. Keep one clear focal point per frame and respect platform UI safe zones.
+3. Show it to someone who hasn't seen the source; anything they ask about gets fixed in the edit.
+
+**Avoid:** Jargon or names with no on-screen context. On-screen text that repeats the caption instead of adding information.
+
+---
+
+## 16. Payoff
+
+**What:** The clip delivers exactly what the hook promised and ends on one of its strongest lines.
+**Why:** A broken promise kills trust, the rewatch, and the share.
+
+**Apply:**
+1. Write the hook's promise and the timestamp where it's delivered.
+2. End on a top-3 line from the clip, on a clean frame and audio tail.
+3. Cut everything after the real ending, and match any CTA to the viewer's after-state.
+
+**Avoid:** A second, weaker ending after the real one. Ending on an explanation instead of the line.
+
+---
+
+## 17. Novelty
+
+**What:** The clip shows the viewer something they haven't seen before — a fresh angle, a surprising fact, or an unexpected visual.
+**Why:** Feeds are full of familiar ideas; novelty is what stops the thumb and makes the clip worth sharing.
+
+**Apply:**
+1. Name the one thing in the clip the viewer probably hasn't heard or seen before — lead with it or build to it.
+2. Prefer specific details (exact numbers, names, times) over general statements.
+3. Change something visual at least once (angle, B-roll, text treatment) so the clip doesn't look like every other talking head.
+
+**Avoid:** Clipping the same well-worn advice everyone posts. Mistaking a gimmick (random effects, meme overlays) for a new idea.
+
+---
+
+## 18. Micro-Editing
+
+**What:** Frame-level polish — breath trims, word-level cuts, caption timing, punch-in scale, and clean in/out frames.
+**Why:** Small flaws add up to a clip that feels amateur, even when the big decisions are right.
+
+**Apply:**
+1. Trim breaths, fillers, and dead frames at the head and tail of every cut, without clipping words (Rule 3).
+2. Check caption timing, keyword emphasis, and line breaks frame by frame.
+3. Check the first and last frame of the clip and of every shot: no blinks, half-words, or mid-gesture freezes.
+
+**Avoid:** Over-trimming until speech sounds breathless. Leaving the polish pass until after export.
+
+---
+
+## Scorecard
+
+Copy into the clip's working notes for each version.
+
+| #  | Principle              | Pass / Miss / N/A | Note |
+|----|------------------------|-------------------|------|
+| 1  | Purpose ★              |                   |      |
+| 2  | Story                  |                   |      |
+| 3  | Information Hierarchy  |                   |      |
+| 4  | Hook ★                 |                   |      |
+| 5  | Curiosity Gap          |                   |      |
+| 6  | Retention              |                   |      |
+| 7  | Pacing                 |                   |      |
+| 8  | Rhythm                 |                   |      |
+| 9  | Cutting                |                   |      |
+| 10 | Emotion                |                   |      |
+| 11 | Tension & Release      |                   |      |
+| 12 | Reactions              |                   |      |
+| 13 | Silence                |                   |      |
+| 14 | Audio Balance          |                   |      |
+| 15 | Clarity ★              |                   |      |
+| 16 | Payoff ★               |                   |      |
+| 17 | Novelty                |                   |      |
+| 18 | Micro-Editing          |                   |      |
+
+★ = non-negotiable. Record in metadata as `"framework_score": "16/18 (2 miss: 12, 17)"` — passes over applicable principles, followed by the missed numbers.
