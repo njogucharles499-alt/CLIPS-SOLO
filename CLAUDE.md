@@ -95,7 +95,8 @@ Run for every candidate clip after hook and arc assignment.
 | Low        | 2 versions    | 3 versions |
 
 - **V1 Primary** = primary style. **V2 Contrast** = secondary style (must be a compatible pair). **V3 Wildcard** = third style or V1 with an alternate hook.
-- **Re-cut every version from the source**, never from another version.
+- **Re-cut every version from the source** when it needs different boundaries; a version inside V1's in/out points may be derived from V1.
+- **In OpusClip**, follow `vault/multi-version-strategy.md` Section 10: `duplicate_clip` + `edit_clip` for shorten/restyle versions, a new range-limited `submit_project` for longer versions or other aspect ratios, an XML → Premiere pass for Cinematic/Inspirational music and grade, and `get_usage` before every batch.
 - **Keep the core fixed** (payoff line, facts, brand voice); vary in/out points, hook, duration, pacing, music, and captions.
 - **Distinctness check:** each extra version differs from V1 on ≥ 3 of D1–D7.
 - **Max 3 versions** per source segment.

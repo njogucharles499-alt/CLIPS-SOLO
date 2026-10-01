@@ -74,7 +74,7 @@ V2 must be a "Yes" pair with V1 in the compatibility table in `style-selection-r
 6. Package all versions together (Section 7)
 ```
 
-**Always re-cut from source.** Re-editing V1 into V2 inherits V1's in/out points and pacing decisions and produces a version that is the same clip with different music. Each version starts from the raw segment with fresh cut decisions.
+**Re-cut from source whenever a version needs different boundaries.** Re-editing V1 into V2 inherits V1's in/out points and pacing decisions and tends to produce the same clip with different captions. A version may be derived from V1 only when it starts no earlier and ends no later than V1 and still passes the distinctness check. In OpusClip this is the difference between `duplicate_clip` and a new `submit_project` — see Section 10.
 
 Each version is scored independently against the 18-principle framework using **its own style's critical principles**.
 
@@ -95,6 +95,8 @@ Versions must be meaningfully different. V2 (and V3) must differ from V1 on **at
 | D7 | Caption style | Different caption treatment |
 
 If a version fails the check, re-cut it further toward its style's extremes, or drop it.
+
+**OpusClip note:** D6 (music) can't be met inside OpusClip — it has no music tools. Versions finished only in OpusClip must reach 3 differences from D1–D5 and D7; D6 counts only after an XML → Premiere finishing pass (Section 10).
 
 ---
 
@@ -196,3 +198,84 @@ When versions are A/B tested on the same platform:
 
 4. **Declare a winner** only when it leads on **average % watched and at least one of shares/saves**, with a margin of ≥ 15%. Otherwise record the result as "no clear winner".
 5. **Log the learning** in the campaign notes: source type, styles tested, winner, margin. After 5+ tests for a client, use the log to adjust their default primary style in the selection rules (e.g. "this audience prefers Educational over Fast/Energy for list content").
+
+---
+
+## 10. OpusClip Implementation
+
+How to produce versions with the OpusClip API (MCP tools `opusclip_*`).
+
+### What OpusClip can and can't do
+
+| Can (in `submit_project` / `edit_clip`) | Can't — needs XML → Premiere pass |
+|---|---|
+| Steer clip choice: `customPrompt`, `clipDurationsSec`, `rangeStart`/`rangeEnd`, `genre` | Music, beat-cutting, music builds |
+| AI hook at the start (`enableAutoHook`), filler removal at submit | Sound effects |
+| Remove fillers / pauses, delete phrases | B-roll inserts, reaction shots from elsewhere in the source |
+| Trim, split, drop, reorder sections (shorten or rearrange only) | Punch-ins/zooms, speed ramps, slow-mo |
+| Captions, emoji, keyword highlight on/off; caption colour, highlight colour, position, uppercase | Colour grade, transitions, J/L cuts |
+| Text overlays (one fixed look: bold black text on a white box) | Extending a clip past its current in/out points |
+| Exports: HD, 4K (paid plan + 4K source), Premiere XML (entitled plan) | Custom caption animations beyond brand templates |
+
+### Version-creation rule
+
+| The version… | Do this |
+|---|---|
+| starts no earlier and ends no later than V1 | `duplicate_clip` on V1 → `edit_clip` with the style's ops |
+| is longer, starts earlier, or needs a different hook moment | New `submit_project` with `rangeStart`/`rangeEnd` around the segment (±15 s padding), the style's `clipDurationsSec` and `customPrompt` |
+| needs a different aspect ratio | New `submit_project` per ratio — a project has one aspect ratio |
+
+### Workflow
+
+```
+1. get_usage                           → confirm credits and concurrency headroom
+2. submit_project (per style/ratio)    → returns projectId (set webhookUrl or poll)
+3. list_clips                          → poll until stage completes; pick the clip matching the locked core
+4. get_transcript / describe_clip      → confirm hook line, payoff line, section timings
+5. duplicate_clip                      → only for shorten-or-restyle versions
+6. edit_clip(ops, dryRun: true)        → check the result, then edit_clip(ops)
+7. describe_clip                       → poll until render_pending is false
+8. export_clip (hd | xml)              → poll until status is "ready"
+9. create_collection / add_clip_to_collection / export_collection → package
+```
+
+### Style recipes
+
+Submit settings and `edit_clip` ops per style. After the ops, always fix the in-point with `trim_section` (section 0) so the clip starts on the first syllable of the hook, and the out-point with `trim_section` / `drop_section` on the last section so it ends on the payoff.
+
+**Fast/Energy**
+- Submit: `clipDurationsSec: [[20,45]]`, `enableAutoHook: true`, `removeFiller: true`, `customPrompt: "high-energy hot take or rapid-fire tips"`.
+- Ops: `remove_filler_words` · `remove_pauses` (`minPauseSec: 0.3`) · `set_keyword_highlight` true · `set_emoji` true · `set_style` (`uppercase: true`, `captionPosition: "middle"`).
+- Finish: in OpusClip. Optional XML pass for beat-cut music, punch-ins, and SFX.
+
+**Educational**
+- Submit: `clipDurationsSec: [[45,90]]`, `enableAutoHook: false`, `removeFiller: true`, `customPrompt: "clear step-by-step explanation with a takeaway"`.
+- Ops: `remove_filler_words` · `remove_pauses` (`minPauseSec: 0.8`) · `set_keyword_highlight` true · `set_emoji` false · `set_style` (`captionPosition: "bottom"`) · `add_text_overlay` per step (`text: "Step 1"`, `position: "top"`, `durationSec` = length of that step).
+- Finish: in OpusClip.
+
+**Comedy**
+- Submit: `clipDurationsSec: [[15,45]]`, `enableAutoHook: false`, `removeFiller: false`, `customPrompt: "funny moment with setup, punchline, and a real laugh"`.
+- Ops: `set_keyword_highlight` true · `set_emoji` false · `delete_phrase` only on setup fillers. **Never** `remove_pauses` — it cuts the beats before and after the punchline. Trim the last section to end on the laugh or the reaction.
+- Finish: in OpusClip.
+
+**Cinematic**
+- Submit: `clipDurationsSec: [[60,120]]`, `enableAutoHook: false`, `removeFiller: false`, `aspectRatio` per platform (often `landscape` or `four_five`), `customPrompt: "emotional, reflective personal story"`.
+- Ops: `set_emoji` false · `set_keyword_highlight` false · `set_style` (`captionPosition: "bottom"`, `uppercase: false`). No `remove_pauses`.
+- Finish: `export_clip` with `target: "xml"` → Premiere for score, grade, slow-mo B-roll, J/L cuts, held final frame.
+
+**Inspirational**
+- Submit: `clipDurationsSec: [[45,90]]`, `enableAutoHook: false`, `removeFiller: true`, `customPrompt: "struggle, turning point, and a rallying line"`.
+- Ops: `remove_filler_words` · `set_keyword_highlight` true · `set_emoji` false · `set_style` (`captionPosition: "bottom"`). Use `reorder_sections` only if the story must open on the struggle. No `remove_pauses` near the peak line.
+- Finish: `export_clip` with `target: "xml"` → Premiere for the music build and visual lift at the peak.
+
+### Caption templates
+
+The org's brand templates (`list_brand_templates`) are currently two presets, both portrait with word-level karaoke animation — a fit for Fast/Energy and Comedy. Clean sentence-case captions for Cinematic, Educational, and Inspirational need a dedicated brand template, created in the OpusClip web app (the API can list templates but not create them) and passed as `brandTemplateId` at submit.
+
+### Credit budget
+
+- Cost is ~1 credit per minute of source processed. Org limits: **900 credits / month**, **10 concurrent projects** (check with `get_usage`).
+- Always submit versions with `rangeStart` / `rangeEnd` around the segment — never re-submit the full source per version.
+- Example: a 2-minute segment × 3 versions × 3 aspect ratios ≈ 18 credits.
+- Run `get_usage` before every batch; if a batch exceeds remaining credits, drop V3s first, then non-hero V2s.
+- Confirm on the first live run that range-limited submits are billed by range (compare `get_usage` before and after).
