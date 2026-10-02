@@ -70,6 +70,17 @@ If ALL above are ✓, proceed to clip workflow. If any fail: contact Lovable bef
 - For each version: apply style-specific edits via OpusClip edit_clip tool
 - Output: edited clips ready for export
 
+### 6B. AUDIO FINISHING (Cinematic & Inspirational Only)
+- Load `/vault/ffmpeg-finishing.md`
+- If style is Cinematic (needs 80-100 BPM atmospheric music) or Inspirational (needs 100-120 BPM uplifting music):
+  - Extract dialogue audio from OpusClip export
+  - Mix with music: dialogue at -3dB, music at -18dB
+  - Apply optional EQ, compression, or fades if needed
+  - Remux video + finished audio with FFmpeg
+  - Output: final finished clip with music
+- If music unavailable: clip still works without it (dialogue only)
+- **Skip this step for:** Comedy, Educational, Fast/Energy (clips are complete from OpusClip)
+
 ### 7. COMPLIANCE VERIFICATION (CLIP-LEVEL)
 Before export, verify ALL Lovable requirements on this specific clip:
 - [ ] **FEATURED CONTENT:** Anton visible on-screen, clearly featured (Req #2) ✓
@@ -90,8 +101,8 @@ Output: compliance checklist (pass/fail per item)
 
 ### 9. EXPORT & HAND-OFF
 - Export each version from OpusClip (HD quality)
-- For Cinematic/Inspirational styles: note that Premiere export is needed for music/grading finishing (if unavailable, clip still works as-is)
-- Provide caption template: `[Clip description here] #LovablePartner`
+- For Cinematic/Inspirational styles: music finishing already applied via FFmpeg (Step 6B)
+- For all styles: provide caption template: `[Clip description here] #LovablePartner`
 - Output: ready-to-post clip files + captions
 - **User's manual steps (not Claude's):**
   - Post to TikTok (enable comments, write caption with #LovablePartner)
@@ -105,7 +116,12 @@ Output: compliance checklist (pass/fail per item)
 
 - `/vault/hooks.md` — 5 hook types (Curiosity, Contrast, Revelation, Stakes, Reaction)
 - `/vault/arcs.md` — 3 emotional arcs (Short 30-45s, Mid 45-60s, Long 60-90s)
-- `/vault/editing-rules.md` — 40+ principles of elite editing (pacing, cuts, silence, reactions)
+- `/vault/editing-framework.md` — 18 core principles, 4 must-pass checks
+- `/vault/editing-styles.md` — 5 styles with must-pass rules (Fast/Energy, Cinematic, Comedy, Educational, Inspirational)
+- `/vault/editing-rules.md` — 20 tactical principles (pacing, cuts, silence, reactions)
+- `/vault/style-selection-rules.md` — Auto-selection decision tree with 10-signal measurement
+- `/vault/multi-version-strategy.md` — Multi-version strategy with OpusClip implementation
+- `/vault/ffmpeg-finishing.md` — Audio finishing for Cinematic/Inspirational (FFmpeg commands)
 - `/vault/lovable-requirements.md` — 7 Lovable campaign rules + what user must do
 
 ## Key Principles
