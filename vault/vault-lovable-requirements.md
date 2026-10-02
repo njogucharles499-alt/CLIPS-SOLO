@@ -32,6 +32,12 @@ The clip MUST show and focus on either:
 - Shira Lazar (any episode)
 - [Your full approved list from the Lovable Discord]
 
+**Official wording of the rule (from the campaign brief):** "Must show Anton and/or Lovable. Can't clip parts of the podcasts without it being about Lovable. Must only use podcasts provided." Budget continues to be re-topped if results are good.
+
+**Consequences for clip selection:**
+- The clip's *content* must be about Lovable, not just come from a Lovable podcast. Generic AI/ethics/culture/humanity segments do NOT qualify, even if Anton is speaking.
+- Only podcasts on the official "provided" list qualify (get the full list from the Lovable Discord; Shira Lazar is the only one confirmed so far).
+
 **Your action:** Before processing any video, verify it's from an approved podcast list.
 
 ---
